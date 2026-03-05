@@ -2,14 +2,11 @@ package Proyecto5;
 
 public class Calculator {
 
-    public double calcular(double a, double b, String operacion) {
+    public double Operacion(double a, double b, String operacion) {
         if (operacion.equals("suma")) {
             return a + b;
         } else if (operacion.equals("potencia")) {
-            double resultado = 1;
-            for (int i = 0; i < b; i++) {
-                resultado *= a;
-            }
+            double resultado = calcularPotencia(a, b);
             return resultado;
         } else if (operacion.equals("raiz")) {
             double guess = a / 2;
@@ -20,4 +17,12 @@ public class Calculator {
         }
         return 0;
     }
+
+	private double calcularPotencia(double a, double b) {
+		double resultado = 1;
+		for (int i = 0; i < b; i++) {
+		    resultado *= a;
+		}
+		return resultado;
+	}
 }
